@@ -128,6 +128,65 @@ int main(){
     // } 
     // cout << endl;
 
+/////////////////14
+    // //14a
+    // int y[n] = {0}, counter = 1;
+    // y[0] = a[0];
+    // for (int i = 1; i < n; i++){
+    //     if (a[i-1] != a[i]){
+    //         y[i] = a[i];
+    //         counter++;
+    //     }
+
+    // }
+    // int z[counter] = {0}, i_temp = 0;
+    // for (int i = 0; i < n; i++){
+    //     if (y[i] != 0){
+    //         z[i_temp] = y[i];
+    //         cout << z[i_temp] << " ";
+    //         i_temp++;
+    //     }
+    // }
+    // cout << endl;
+
+    // //14б
+    // int counter = 1, v[n] = {0}, temp = 0;
+
+    // for (int i = 1; i < n; i++){
+    //     if (a[i-1] != a[i]) {
+    //         if (counter != 1){
+    //             v[temp] = a[i-1];
+    //             temp++;
+    //         }
+    //         counter = 1;
+    //     } else
+    //         counter ++;
+    // }
+    // if (counter != 1){
+    //     v[temp] = a[n-1];
+    // }
+    // for (int i = 0; i < n; i++) cout << v[i] << " ";
+    // cout << endl;
+
+
+    // //14в
+    // int counter = 1, v[n] = {0}, temp = 0;
+
+    // for (int i = 1; i < n; i++){
+    //     if (a[i-1] != a[i]) {
+    //         if (counter == 1){
+    //             v[temp] = a[i-1];
+    //             temp++;
+    //         }
+    //         counter = 1;
+    //     } else
+    //         counter ++;
+    // }
+    // if (counter == 1){
+    //     v[temp] = a[n-1];
+    // }
+    // for (int i = 0; i < n; i++) cout << v[i] << " ";
+    // cout << endl;
 
 
 
