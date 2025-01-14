@@ -4,7 +4,7 @@ using namespace std;
 
 int main(){
 
-    //ДАМЫ И ГОСПОДА ЭТО ЛЮТЕЙШИЙ ГОВНОКОД НО ВРОДЕ РАБОЧИЙ
+
 
     const int n = 5;
     int a[n] = {0};
@@ -139,7 +139,7 @@ int main(){
         } else if (a[right] >= x) {
             right--;
         } else {
-            swap(a[left], a[right]);//хз можно ли использовать но мне лень писать 3 строки свапа
+            swap(a[left], a[right]);
             left++;
             right--;
         }
@@ -149,7 +149,7 @@ int main(){
         cout<<a[i]<<' ';
 
     //8
-    ////полагаю что массив упорядочен, иначе анлак, меньше o(n) вряд-ли выйдет
+
     int l = 0, r = n-1;
     int flag = 1, mid;
     while (flag && (l<=r)){
@@ -163,7 +163,7 @@ int main(){
 
 
 
-    // 9 со звездочкой написано, значит не обяз
+
 
 
 

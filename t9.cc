@@ -4,7 +4,7 @@ using namespace std;
 
 
 
-//////////////////ps за правильность ну ваще не отвечаю мне очень впадлу напрягаться и проверять
+
 
 
 // /////////////////////////////////func_n_2
@@ -75,7 +75,7 @@ double perimeter(double x1, double y1, double x2, double y2, double x3, double y
     return dist(x1, y1, x2, y2) + dist(x3, y3, x2, y2) + dist(x1, y1, x3, y3);
 }
 
-void find_max(double a, double b, double c) { ///// мне лень учитывать ситуации когда равно
+void find_max(double a, double b, double c) { 
     int flag_a = 0, flag_b = 0, flag_c = 0;
     if ((a >= b) && (a >= c))
         cout << "num 1 is the max\n";
@@ -91,7 +91,7 @@ double area(double x1, double y1, double x2, double y2, double x3, double y3){
     return 0.5*fabs(x1*(y2-y3) + x2*(y3-y1) + x3*(y1-y2));
 }
 
-void find_max_1(double a, double b, double c, double d) { ///// мне лень учитывать ситуации когда равно
+void find_max_1(double a, double b, double c, double d) { 
     int flag_a = 0, flag_b = 0, flag_c = 0;
     if ((a >= b) && (a >= c) && (a >= d))
         cout << "num 123 is the max\n";

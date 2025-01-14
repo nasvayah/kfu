@@ -45,14 +45,14 @@ int main() {
 //     cout << sum;
 
 
-    //5
-    double sum = 0, x, e, temp = 1;
-    cin >> x >> e;
-    for (int i = 1; fabs(temp*(i+1)) > e; i++){
-        temp *= -x/3;
-        sum += temp*(i+1);
-    }
-    cout << sum;
+    // //5
+    // double sum = 0, x, e, temp = 1;
+    // cin >> x >> e;
+    // for (int i = 1; fabs(temp*(i+1)) > e; i++){
+    //     temp *= -x/3;
+    //     sum += temp*(i+1);
+    // }
+    // cout << sum;
 
 // /////////////////6
 //     //a

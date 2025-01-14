@@ -1,5 +1,6 @@
 //////////////1.12(и)
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int is_greater_mod(bool a[], bool b[], int n){
@@ -96,7 +97,10 @@ void my_minus(bool a[], bool b[], bool res[], int n){
 
 void negative(bool a[], bool res[], int n){
     for (int i = 1; i < n; i++){
-        res[i] = !a[i];
+        if (a[i] == true)
+            res[i] = false;
+        else
+            res[i] = true;
     }
     res[0] = a[0];
 }
@@ -104,13 +108,17 @@ void scale(bool a[], int scale, bool res[], int n){
     for (int i = 1 ; i < n-scale; i++){
         res[i] = a[i+scale];
     }
+    for (int i = n-scale; i < n; i++){
+        res[i] = false;
+    }
     res[0] = a[0];
 }
 
 
 
 
-void get(bool a[], int n){
+void get(bool a[], int n, char message){
+    cout << "input mass " << message << ":";
     char x = 0;
     cin >> x;
     if (x == '-')
@@ -126,7 +134,8 @@ void get(bool a[], int n){
     }
 }
 
-void print(bool a[], int n){
+void print_bin(bool a[], int n){
+    cout << "binary: ";
     if (a[0] == false)
         cout << '-';
     else 
@@ -139,6 +148,70 @@ void print(bool a[], int n){
     }
     cout << endl;
 }
+void print_dec(bool a[], int n){
+    cout << "decimal: ";
+    if (a[0] == false)
+        cout << '-';
+    else 
+        cout << '+';
+    int res = 0;
+    int two_pow = 1;
+    for (int i = n-1; i > 0; i--){
+        res += two_pow*a[i];
+        two_pow *= 2;
+    }
+    cout << res << endl;
+}
+
+char dec_to_hex(int res){
+    if (res <= 9)
+        return char(res + 48);
+    else if (res == 10)
+        return 'A';
+    else if (res == 11)
+        return 'B';
+    else if (res == 12)
+        return 'C';
+    else if (res == 13)
+        return 'D';
+    else if (res == 14)
+        return 'E';
+    else if (res == 15)
+        return 'F';
+    
+    return '0';
+}
+void print_hex(bool a[], int n){
+    cout << "hex: ";
+    if (a[0] == false)
+        cout << '-';
+    else 
+        cout << '+';
+    int scale = (n-1)%4;
+    if (scale != 0){
+        int res = 0;
+        for (int i = 1; i <= scale; i++){
+            if (a[i] == true)
+                res += pow(2, scale-i);
+        }
+        cout << dec_to_hex(res);
+    }
+    int count = 0;
+    int res = 0;
+    for (int i = 1 + scale; i < n; i += 1){
+        if (a[i] == true)
+            res += pow(2, 3-count)*a[i];
+        count++;
+        if (count == 4){
+            count = 0;
+            cout << dec_to_hex(res);
+            res = 0;
+        }
+    }
+    cout << endl;
+}
+
+
 
 
 void f(bool x[], bool y[], bool z[], bool res[], const int n){
@@ -179,13 +252,15 @@ void f(bool x[], bool y[], bool z[], bool res[], const int n){
 }
 
 int main(){
-    const int n = 10;
+    const int n = 5;
     bool x[n] = {false}, y[n] = {false}, z[n] = {false}, res[n] = {false};
-    get(x, n);
-    get(y, n);
-    get(z, n);
+    get(x, n, 'x');
+    get(y, n, 'y');
+    get(z, n, 'z');
     f(x, y, x, res, n);
-    print(res, n);
+    print_bin(res, n);
+    print_dec(res, n);
+    print_hex(res, n);
 
 
     return 0;

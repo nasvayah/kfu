@@ -84,46 +84,46 @@ int main() {
 // cout << y << endl;
 
 
-// //26
-// double e, y = 0, a = 0, b = 1, x;
-// e = 0.0001;
-// cin >> x;
-// a = x;
+//26
+double e, y = 0, a = 0, b = 1, x;
+e = 0.0001;
+cin >> x;
+a = x;
 
 
-// do{
-// a = a*a;
+do{
+a = a*a;
 
-// if (a>=2)
-//     y = y+b;
-// b =  b/2;
-// } while(b > e);
-// cout << y << endl;
+if (a>=2)
+    y = y+b;
+b =  b/2;
+} while(b > e);
+cout << y << endl;
 
 
-// //33
-// double e, a = M_PI/4, b = M_PI, z, fz;
-// e = 1;
-// double x_prev = a;
-// double fa = sin(a) + cos(a), fb = sin(a) + cos(b);
-// z = b;
-// fz = fb;
-// double x = x_prev- (x_prev-z)/(sin(x_prev) + cos(x_prev) - fz);
+//33
+double e, a = M_PI/4, b = M_PI, z, fz;
+e = 1;
+double x_prev = a;
+double fa = sin(a) + cos(a), fb = sin(a) + cos(b);
+z = b;
+fz = fb;
+double x = x_prev- (x_prev-z)/(sin(x_prev) + cos(x_prev) - fz);
 
-// while (fabs(x - x_prev)>=e){
-//     if ((cos(x) + sin(x))*fz >=0){
-//         if (fz == fa){
-//             fz = fb;
-//             z = b;
-//         } else {
-//             fz = fa;
-//             z = a;
-//         }
-//     }
-//     x_prev = x;
-//     x = x_prev- (x_prev-z)/(sin(x_prev) + cos(x_prev) - fz);
-// }
-// cout << x << endl;
+while (fabs(x - x_prev)>=e){
+    if ((cos(x) + sin(x))*fz >=0){
+        if (fz == fa){
+            fz = fb;
+            z = b;
+        } else {
+            fz = fa;
+            z = a;
+        }
+    }
+    x_prev = x;
+    x = x_prev- (x_prev-z)/(sin(x_prev) + cos(x_prev) - fz);
+}
+cout << x << endl;
 
 
 // //23
@@ -137,15 +137,15 @@ int main() {
 // cout << sum;
 
 
-//24
-double x = 3, n = 1, m = 10, e = 0.001, temp = sin(x*n)/1, fact = 1, sum = temp;
-while (!((n > m ) && fabs(temp) <e)){
-    n++;
-    fact*=n;
-    temp = sin(x*n)/fact;
-    sum += temp;
-}
-cout << sum;
+// //24
+// double x = 3, n = 1, m = 10, e = 0.001, temp = sin(x*n)/1, fact = 1, sum = temp;
+// while (!((n > m ) && fabs(temp) <e)){
+//     n++;
+//     fact*=n;
+//     temp = sin(x*n)/fact;
+//     sum += temp;
+// }
+// cout << sum;
 
 
 
