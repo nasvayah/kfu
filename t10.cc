@@ -91,11 +91,71 @@ bool is_same_my(int mas[], int n){
     return res_flag;
 }
 
+
+bool check(int mas[], int n){
+    bool flag = false;
+    for (int i = 0; i < n; i++){
+        if (is_prime(mas[i]))
+            flag = true;
+    }
+    return flag;
+}
+
+
+bool is_period(int mas[], int n){
+    bool flag = false;
+    for (int t = 1; t <= (n)/2; t++){
+        bool temp_flag = true;
+        for (int i = 0; i < n - t; i++){
+            if (mas[i] != mas[i+t])
+                temp_flag = false;
+        }
+        if (temp_flag)
+            flag = true;
+    }
+    return flag;
+}
+
+bool is_subseq(int a[], int n, int b[], int m){
+    bool flag = false;
+    for (int i = 0; i < n-m +1; i++){
+        bool temp_flag = true;
+        for (int j = 0; (j < m)&&(temp_flag); j++){
+            if (a[i+j] != b[j])
+                temp_flag = false;
+        }
+        if (temp_flag)
+            flag = true;
+    }
+    return flag;
+}
+const int nn = 3;
+bool is_equal(int a[nn][nn]){
+    bool flag = false;
+    for (int i = 0; i < nn; i++){
+        for (int j = 0; j < nn; j++){
+            bool temp_flag = true;
+            for (int k = 0; k < nn; k++){
+                if (a[i][k] != a[k][j])
+                    temp_flag = false;
+            }
+            if (temp_flag)
+                flag = true;
+        }
+    }
+    return flag;
+}
+
+// bool is_stochaostic(int a[nn][nn]){
+//     bool flag = true;
+    
+// }
+
 int main(){
-    const int n = 3;
-    int mas[n] = {0};
-    for (int i = 0; i < n; i++)
-        cin >> mas[i];
+    // const int n = 6;
+    // int mas[n] = {0};
+    // for (int i = 0; i < n; i++)
+    //     cin >> mas[i];
 
 
 // ////////////1
@@ -139,9 +199,48 @@ int main(){
 //     bool flag = is_same_my(mas, n);
 //     cout << flag << endl;
 
-////////////2
-    bool flag = is_same_my(mas, n);
-    cout << flag << endl;
+// ////////////2
+//     bool flag = check(mas, n);
+//     cout << flag << endl;
+
+// ////////////3
+//     bool flag = is_period(mas, n);
+//     cout << flag << endl;
+
+////////////4
+    // const int m = 4;
+    // int mas1[m];
+    // for (int i = 0; i < m; i++){
+    //     cin >> mas1[i];
+    // }
+    // bool flag = is_subseq(mas, n, mas1, m);
+    // cout << flag << endl;
+
+// ////////5
+//     const int m = 3;
+//     int mas1[m][m];
+//     for (int i = 0; i < m; i++){
+//         for (int j = 0; j < m; j++){
+//             cin >> mas1[i][j];
+//         }
+//     }
+//     bool flag = is_equal( mas1);
+//     cout << flag << endl;
+
+
+// ////////5
+//     const int m = 3;
+//     int mas1[m][m];
+//     for (int i = 0; i < m; i++){
+//         for (int j = 0; j < m; j++){
+//             cin >> mas1[i][j];
+//         }
+//     }
+//     bool flag = is_stochaostic( mas1);
+//     cout << flag << endl;
+
+
+
 
 
     return 0;
