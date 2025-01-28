@@ -101,10 +101,98 @@ void task_6(){
     //     else
     //         fin >> x1;
     // }
+        //объединение
+    bool fin_eof = false;
+    bool fin1_eof = false;
+    while (!fin_eof || !fin1_eof) {
+        if (((x1 <= x2) || (fin1_eof)) && !fin_eof){
+            if (x1 != x_prev) {
+                fout << x1 << " ";
+                x_prev = x1;
+            }
+            fin_eof = fin.eof();
+            fin >> x1;
+        } else {
+            if (x2 != x_prev) {
+                fout << x2 << " ";
+                x_prev = x2;
+            }
+            fin1_eof = fin1.eof();
+            fin1 >> x2;
+        }   
+    }
+    fin.close();
+    fin1.close();
+    fout.close();
+
+
+}
+
+void task_7(){
+    ifstream fin;
+    fin.open("t12_1.txt");
+    ofstream fout;
+    fout.open("t12_res.txt");
+    int x_prev, x;
+    fin >> x_prev;
+    fout << x_prev << " ";
+    while (!fin.eof()){
+        fin >> x;
+        if (x != x_prev)
+            fout << x << " ";
+        x_prev = x;
+    }
+    fin.close();
+    fout.close();
+}
+
+void task_8(){
+    ifstream fin;
+    ofstream fout_plus;
+    ofstream fout_minus;
+    fin.open("t12_1.txt");
+    fout_plus.open("t12_1_plus.txt");
+    fout_minus.open("t12_1_minus.txt");
+    int x;
+    while (!fin.eof()){
+        fin >> x;
+        if (x >= 0)
+            fout_plus << x << " ";
+        else 
+            fout_minus << x << " ";
+    }
+    fin.close();
+    fout_plus.close();
+    fout_minus.close();
+
+
+    ifstream fin_plus;
+    ifstream fin_minus;
+    fin_plus.open("t12_1_plus.txt");
+    fin_minus.open("t12_1_minus.txt");
+
+    fin_plus >> x;
+    while (!fin_plus.eof()){
+        
+        cout << x << " ";
+        fin_plus >> x;
+    }
+    cout << endl;
+    fin_minus >> x;
+    while (!fin_minus.eof()){
+        cout << x << " ";
+        fin_minus >> x;
+    }
+    cout << endl;
+    fin_plus.close();
+    fin_minus.close();
+
+
+
 }
 
 int main(){
-   task_6();
+   task_8();
 
 
 
