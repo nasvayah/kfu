@@ -71,10 +71,30 @@ void task_3(){
     output_mas(a);    
 }
 
+void task_4(){
+    cout << "enter k:\n";
+    int k;
+    cin >> k;
+    int a[n] = {0};
+    enter_mas(a);
+    int start = 0;
+    for (int i = 0; i < n-1; i++){
+        int minimal = i;
+        for (int j = start; j < n; j++){
+            if (a[j] < a[i])
+                minimal = j;
+        }
+        swap(a[i], a[minimal]);
+
+        start++;
+    }
+    cout << a[k-1];       
+}
+
 
 
 int main(){
-    task_3();
+    task_4();
 
 
     return 0;
