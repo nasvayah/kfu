@@ -92,9 +92,69 @@ void task_4(){
 }
 
 
+void task_5(){
+    int a[n] = {0};
+    enter_mas(a);
+    int pivot;
+    cout << "enter pivot:\n";
+    cin >> pivot;
+
+    int l = 0;
+    int r = n-1;
+    while (l < r){
+        cout << a[l] << " " << l << " "  << a[r] << " " << r << endl;
+        if (a[l] < pivot)
+            l++;
+        else if (a[r] > pivot)
+            r--;
+        else{
+            swap(a[l], a[r]);
+        }
+    }       
+    output_mas(a);
+}
+
+void task_6(){
+    int a[n] = {0};
+    enter_mas(a);
+    int target;
+    cout << "enter target:\n";
+    cin >> target;
+
+    bool flag = false;
+    for (int i = 0; (i < n) && !flag; i++){
+        if (a[i] == target)
+            flag = true;
+    }
+    if (flag)
+        cout << "YES\n";
+    else    
+        cout << "NO\n";
+}
+
+void task_7(){
+    int a[n] = {0};
+    enter_mas(a);
+    int target;
+    cout << "enter target:\n";
+    cin >> target;
+
+    bool flag = false;
+    for (int i = 0; (i < n) && a[i] <= target; i++){
+        if (a[i] == target)
+            flag = true;
+    }
+    if (flag)
+        cout << "YES\n";
+    else    
+        cout << "NO\n";
+}
+
+
+
 
 int main(){
-    task_4();
+    task_7();
 
 
     return 0;
